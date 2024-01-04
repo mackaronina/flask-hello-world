@@ -1,6 +1,5 @@
 beautifulsoup4==4.12.2
 Flask==2.3.2
-pet-pet-gif==1.0.2
 Pillow==9.2.0
 pyTelegramBotAPI==4.14.0
 schedule==1.2.1
