@@ -1,6 +1,5 @@
 beautifulsoup4==4.12.2
 Flask==2.3.2
-perspective-python==2.7.1
 perspective.py==0.3.4
 pet-pet-gif==1.0.2
 Pillow==9.2.0
