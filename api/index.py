@@ -32,7 +32,7 @@ class ExHandler(telebot.ExceptionHandler):
     def handle(self, exc):
         bot.send_message(738931917, traceback.format_exc())
         return True
-bot = telebot.TeleBot(token, threaded=False, num_threads=10, parse_mode='HTML', exception_handler = ExHandler())
+bot = telebot.TeleBot(token, threaded=True, num_threads=10, parse_mode='HTML', exception_handler = ExHandler())
 
 APP_URL = f'https://fknbot.vercel.app/{token}'
 app = Flask(__name__)
@@ -310,7 +310,6 @@ def handle_text(message, txt):
         if 'сбу' in text_for_reaction:
             print('сбу')
             bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEKWrBlDPH3Ok1hxuoEndURzstMhckAAWYAAm8sAAIZOLlLPx0MDd1u460wBA',reply_to_message_id=message.message_id)
-            time.sleep(10)
         elif 'порох' in text_for_reaction or 'порошенко' in text_for_reaction or 'гетьман' in text_for_reaction or 'рошен' in text_for_reaction:
             print('порох')
             bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEK-splffs7OZYtr8wzINEw4lxbvwywoAACXSoAAg2JiEoB98dw3NQ3FjME',reply_to_message_id=message.message_id)
@@ -347,6 +346,7 @@ def get_message():
     
 @app.route('/')
 def get_ok():
+    print('ok')
     return 'ok', 200
 
 @app.route('/send_paint/<chatid>', methods=['POST'])
