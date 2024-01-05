@@ -346,7 +346,9 @@ def get_message():
     
 @app.route('/')
 def get_ok():
-    bot.send_message(738931917, 'ок')
+    data = cursor.execute(f"SELECT id FROM users WHERE id = {KIRYA}")
+    data = data.fetchone()
+    bot.send_message(738931917, f'{data[0]}')
     return 'ok', 200
 
 @app.route('/send_paint/<chatid>', methods=['POST'])
