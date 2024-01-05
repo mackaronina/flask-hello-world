@@ -346,7 +346,7 @@ def get_message():
     
 @app.route('/')
 def get_ok():
-    print('ok')
+    bot.send_message(738931917, 'ок')
     return 'ok', 200
 
 @app.route('/send_paint/<chatid>', methods=['POST'])
